@@ -1,3 +1,10 @@
+import { ChakraProvider, theme } from "@chakra-ui/react";
+import { Home } from "./page/Home";
+
 export function App() {
-  return <div>Hello Word</div>;
+  return (
+    <ChakraProvider resetCSS theme={theme}>
+      <Home />
+    </ChakraProvider>
+  );
 }
