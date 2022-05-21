@@ -1,3 +1,9 @@
+import { Form } from "./components/Form";
+
 export function App() {
-  return <div>Hello Word</div>;
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 }
