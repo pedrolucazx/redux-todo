@@ -1,4 +1,4 @@
-import { IconButton, useColorMode } from "@chakra-ui/react";
+import { Flex, IconButton, useColorMode } from "@chakra-ui/react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 export default function ToggleThemeButton() {
@@ -8,8 +8,9 @@ export default function ToggleThemeButton() {
       aria-label="Toggle tema"
       icon={colorMode === "dark" ? <FaMoon /> : <FaSun />}
       isRound={true}
-      onClick={toggleColorMode}
       size="md"
+      alignSelf="flex-end"
+      onClick={toggleColorMode}
     />
   );
 }
