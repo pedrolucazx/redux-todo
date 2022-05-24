@@ -29,6 +29,19 @@ const taskSlice = createSlice({
       state.tasks = state.tasks.filter((task) => task.id !== payload.id);
     },
 
+    updateTask: (state, { payload }: PayloadAction<ITask>) => {
+      state.tasks = state.tasks.map((task) =>
+        task.id === payload.id
+          ? {
+              id: payload.id,
+              label: payload.label,
+              description: payload.description,
+              updatedAt: payload.updatedAt,
+            }
+          : task
+      );
+    },
+
     toggleComplete: (state, action: PayloadAction<ITask>) => {
       state.tasks = state.tasks.map((task) =>
         task.id === action.payload.id
@@ -39,6 +52,11 @@ const taskSlice = createSlice({
   },
 });
 
-export const { addTask, toggleComplete, deleteAllTasks, deleteOneTask } =
-  taskSlice.actions;
+export const {
+  addTask,
+  toggleComplete,
+  deleteAllTasks,
+  deleteOneTask,
+  updateTask,
+} = taskSlice.actions;
 export default taskSlice.reducer;

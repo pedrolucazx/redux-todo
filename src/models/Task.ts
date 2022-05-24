@@ -3,7 +3,7 @@ export interface ITask {
   label: string;
   completed?: boolean;
   description?: string;
-  createdAt: string;
+  createdAt?: string;
   updatedAt?: string;
 }
 

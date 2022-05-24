@@ -16,6 +16,7 @@ import { updateTable } from "../redux/TableSlice";
 import { toggleComplete } from "../redux/taskSlice";
 import { BtnDeleteOne } from "./buttons/BtnDeleteOne";
 import { BtnDeleteAll } from "./buttons/BtnDeleteAll";
+import { BtnUpdate } from "./buttons/BtnUpdate";
 
 export function TaskList() {
   const dispatch = useDispatch();
@@ -56,10 +57,13 @@ export function TaskList() {
             {task.description}
           </Text>
           <Text textAlign="left" color="gray.500" as={as}>
-            {`Criação: ${task.createdAt}`}
+            {!task.updatedAt
+              ? `Criação: ${task.createdAt}`
+              : `Atualização: ${task.updatedAt}`}
           </Text>
         </Flex>
         <BtnDeleteOne task={task} />
+        <BtnUpdate task={task} />
       </HStack>
     );
   };
@@ -116,8 +120,8 @@ export function TaskList() {
         <Button
           colorScheme="green"
           size="xs"
-          onClick={() => dispatch(updateTable("concluidas"))}
-          isActive={tab === "concluidas"}
+          onClick={() => dispatch(updateTable("concluídas"))}
+          isActive={tab === "concluídas"}
           variant="outline"
         >
           Concluídas

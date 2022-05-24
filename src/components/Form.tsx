@@ -33,6 +33,8 @@ export function Form() {
         createdAt: new Date().toLocaleDateString("pt"),
       })
     );
+    setLabel("");
+    setDescription("");
   }
 
   if (label && !statusInput) {
