@@ -55,7 +55,7 @@ export function Form() {
 
       <FormControl mt={4}>
         <FormLabel htmlFor="descrição">descrição</FormLabel>
-        <Textarea
+        <Input
           variant="filled"
           placeholder="Digite a descrição"
           value={description}

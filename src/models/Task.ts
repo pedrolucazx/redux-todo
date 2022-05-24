@@ -14,3 +14,7 @@ export interface IState {
     tasks: ITasks;
   };
 }
+
+export interface IBtn {
+  task: ITask;
+}

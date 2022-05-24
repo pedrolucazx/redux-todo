@@ -21,6 +21,10 @@ const taskSlice = createSlice({
       state.tasks.push(task);
     },
 
+    deleteAllTasks: (state) => {
+      state.tasks = [];
+    },
+
     toggleComplete: (state, action: PayloadAction<ITask>) => {
       state.tasks = state.tasks.map((task) =>
         task.id === action.payload.id
@@ -31,5 +35,5 @@ const taskSlice = createSlice({
   },
 });
 
-export const { addTask, toggleComplete } = taskSlice.actions;
+export const { addTask, toggleComplete, deleteAllTasks } = taskSlice.actions;
 export default taskSlice.reducer;

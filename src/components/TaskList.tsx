@@ -14,6 +14,7 @@ import { Form } from "./Form";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTable } from "../redux/TableSlice";
 import { toggleComplete } from "../redux/taskSlice";
+import { BtnDeleteAll } from "./buttons/BtnDeleteAll";
 
 export function TaskList() {
   const dispatch = useDispatch();
@@ -141,6 +142,10 @@ export function TaskList() {
       >
         {filterTasks().map(myTask)}
       </VStack>
+
+      <Flex>
+        <BtnDeleteAll />
+      </Flex>
     </>
   );
 }
