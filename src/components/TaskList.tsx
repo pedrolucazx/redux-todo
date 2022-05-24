@@ -14,6 +14,7 @@ import { Form } from "./Form";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTable } from "../redux/TableSlice";
 import { toggleComplete } from "../redux/taskSlice";
+import { BtnDeleteOne } from "./buttons/BtnDeleteOne";
 import { BtnDeleteAll } from "./buttons/BtnDeleteAll";
 
 export function TaskList() {
@@ -47,7 +48,7 @@ export function TaskList() {
           defaultChecked={task.completed}
           onChange={() => dispatch(toggleComplete(task))}
         />
-        <Flex direction="column" justifyContent="center">
+        <Flex direction="column" justifyContent="center" w="100%" p="8px">
           <Text textAlign="left" fontWeight="bold" as={as}>
             {task.label}
           </Text>
@@ -58,6 +59,7 @@ export function TaskList() {
             {`Criação: ${task.createdAt}`}
           </Text>
         </Flex>
+        <BtnDeleteOne task={task} />
       </HStack>
     );
   };

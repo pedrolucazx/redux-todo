@@ -5,7 +5,6 @@ import {
   ModalContent,
   ModalHeader,
   ModalFooter,
-  ModalBody,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
